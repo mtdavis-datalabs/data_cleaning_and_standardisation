@@ -45,7 +45,7 @@ SUBSTITUTE, conditional formatting, data validation, Paste Special (Values)
 
 ## Files
 raw_data.csv — original uncleaned dataset (12,575 rows)
-cleaned_data.xlsx — cleaned data, including Raw Data (Original) and Cleaning Log tabs
+retail_store_sales_cleaned_data.xlsx — cleaned data, including Raw Data, Cleaned Data and Cleaning Log tabs
 
 ## Data Source
 Retail Store Sales: Dirty for Data Cleaning — via Kaggle
