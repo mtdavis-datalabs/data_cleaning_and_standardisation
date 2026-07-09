@@ -8,7 +8,7 @@ from a static Category + Price Per Unit relationship, rather than deleting
 incomplete rows outright. Every action is documented in a full decision log with 
 before/after counts and reasoning.
 
-## Key Findings / Features
+## Key Features
 - Built a reference lookup table of all ~200 unique Item/Category/Price 
   combinations to deduce missing values across two linked columns
 - Recovered 604 of 1,213 missing Item values (50%) by matching Category + Price 
