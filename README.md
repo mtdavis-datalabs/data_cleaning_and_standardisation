@@ -1,5 +1,5 @@
 ## Retail Store Sales — Data Cleaning & Standardisation
-[INSERT SCREENSHOT OF CLEANING LOG — PER-COLUMN TABLE + SUMMARY ROW]
+<img width="1889" height="361" alt="Image" src="https://github.com/user-attachments/assets/30b13882-8c5d-4c8d-afd5-a8170c2ed835" />
 
 ## Overview
 Cleaning and validation of a 12,575-row dirty retail sales dataset (8 product 
