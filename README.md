@@ -1,34 +1,53 @@
-### data_cleaning_and_standardisation
-# **Data Cleaning & Standardisation Project** 
+## Retail Store Sales — Data Cleaning & Standardisation
+[INSERT SCREENSHOT OF CLEANING LOG — PER-COLUMN TABLE + SUMMARY ROW]
 
-## **Overview:**
+## Overview
+Cleaning and validation of a 12,575-row dirty retail sales dataset (8 product 
+categories, ~200 unique items), using cross-field logic to deduce missing values 
+from a static Category + Price Per Unit relationship, rather than deleting 
+incomplete rows outright. Every action is documented in a full decision log with 
+before/after counts and reasoning.
 
-_This is where you add the quick overview of the project and the tools used for the project, its just a quick summary_
+## Key Findings / Features
+- Built a reference lookup table of all ~200 unique Item/Category/Price 
+  combinations to deduce missing values across two linked columns
+- Recovered 604 of 1,213 missing Item values (50%) by matching Category + Price 
+  Per Unit against the lookup table; the remaining 609 had no Price Per Unit to 
+  match against and were correctly left unresolved rather than guessed
+- Recovered all 609 missing Price Per Unit values (100%) by looking up the fixed 
+  price for each Item — a direct, unambiguous relationship with no risk of 
+  incorrect matches
+- Validated Total Spent = Quantity × Price Per Unit across every row where all 
+  three values were present — 0 mismatches found, confirming the complete records 
+  in this dataset are internally consistent
+- Identified 604 rows missing both Quantity and Total Spent simultaneously — with 
+  no third value to calculate from, these were deliberately left blank rather than 
+  estimated, to avoid mixing deduced facts with statistical guesses
+- Standardised 4,199 blank/None Discount Applied values to an explicit "Unknown" 
+  category rather than defaulting to False, since assuming False would have 
+  understated discount usage
+- Fixed 340 Payment Method and 26 Location entries with inconsistent 
+  capitalisation/whitespace (e.g. "cash" / "Cash " / "CASH") using TRIM + PROPER
+- Confirmed Transaction ID fully unique (0 duplicates) and Transaction Date fully 
+  clean, requiring no changes
 
+## Cleaning Summary
+- Total rows: 12,575
+- Total issues found across all columns: 7,595
+- Total values successfully fixed/deduced: 1,584
+- Total rows left unresolved/flagged: 5,407 (Item: 604 · Quantity/Total Spent: 604, 
+  overlapping · Discount Applied: 4,199 relabelled as Unknown)
+- Duplicate Transaction IDs: 0
 
-## **Key Features:** 
-- **Feature 1** - A summary of the 1st key feature of the project 
-- **Feature 2** - A summary of the 2nd key feature of the project
-- **Feature 3** - A summary of the 3rd key feature of the project and any highlights
-- **Feature 4** — A summary of the 4th key feature of the project
-- **Feature 5** — A summary of the 5th key feature of the project and so on
-
-
-## **Skills Demonstrated:** 
-- Skill 1
-- Skill 2
-- Skill 3
-- Skill 4 and so on
-
-
-## **Tools Used:**
-- Tool 1 - then followed with specific sub tools you need to highlight
-
+## Tools Used
+Microsoft Excel — INDEX/MATCH, VLOOKUP, COUNTIF/COUNTIFS, TRIM, PROPER, 
+SUBSTITUTE, conditional formatting, data validation, Paste Special (Values)
 
 ## Files
--[Name_of_File.xlsx](Name_of_File.xlsx) — the full interactive file with dashboards etc
-- `Name_of_Screenshot.png` — static preview of the dashboard (shown below)
+raw_data.csv — original uncleaned dataset (12,575 rows)
+cleaned_data.xlsx — cleaned data, including Raw Data (Original) and Cleaning Log tabs
 
-
-_Note on data:_ Figures shown have been fictionalised for portfolio purposes; the structure reflects a real onboarding tracking workflow.
+## Data Source
+Retail Store Sales: Dirty for Data Cleaning — via Kaggle
+kaggle.com/datasets/ahmedmohamed2003/retail-store-sales-dirty-for-data-cleaning
 
