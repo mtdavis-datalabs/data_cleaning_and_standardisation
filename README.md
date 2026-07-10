@@ -1,4 +1,4 @@
-## Retail Store Sales — Data Cleaning & Standardisation
+# Retail Store Sales — Data Cleaning & Standardisation
 <img width="1889" height="361" alt="Image" src="https://github.com/user-attachments/assets/30b13882-8c5d-4c8d-afd5-a8170c2ed835" />
 
 ## Overview
